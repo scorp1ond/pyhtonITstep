@@ -78,6 +78,59 @@ match choice:
         print(f"Perimeter of the circle: {perimeter}")
     case _:
         print(f"Invalid choice")
+#task 8
+
+file_size_gb = float(input("Enter file size in gigabytes: "))
+speed_bps = float(input("Enter internet speed (bits per second): "))
+choice = input("Show time in (hours / minutes / seconds): ")
+
+file_size_bits = file_size_gb * 1024 * 1024 * 1024 * 8
+time_seconds = file_size_bits / speed_bps
+
+match choice:
+    case "hours":
+        print(f"Download time: {time_seconds / 3600} hours")
+    case "minutes":
+        print(f"Download time: {time_seconds / 60} minutes")
+    case "seconds":
+        print(f"Download time: {time_seconds} seconds")
+    case _:
+        print(f"Invalid choice")
+
+
+#task 9
+
+hours = int(input("Enter current hour (0-23): "))
+
+match hours:
+    case h if 0 <= h < 6:
+        print("Good Night")
+    case h if 6 <= h < 13:
+        print("Good Morning")
+    case h if 13 <= h < 17:
+        print("Good Day")
+    case h if 17 <= h < 24:
+        print("Good Evening")
+    case _:
+        print("Invalid hour")
+
+
+#task 10
+
+temp = float(input("Enter temperature in Celsius: "))
+
+match temp:
+    case t if t < -10:
+        print("Very cold")
+    case t if -10 <= t < 0:
+        print("Cold")
+    case t if 0 <= t < 15:
+        print("Cool")
+    case t if 15 <= t < 25:
+        print("Warm")
+    case _:
+        print("Hot")
+
 
 '''
 num1 = float(input("enter first num: "))
