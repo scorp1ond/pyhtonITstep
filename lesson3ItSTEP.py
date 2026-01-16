@@ -39,43 +39,37 @@ match op:
     case "+": print(f"{num1} + {num2} = {num1 + num2}")'''
 
 
+
 score = int(input("Enter exam score (0-100): "))
 
 if score < 0 or score > 100:
-    print("Error: score must be between 0 and 100")
+    print("Error")
+elif score >= 90:
+    print("Excellent")
+elif score >= 70:
+    print("Good")
+elif score >= 50:
+    print("Satisfactory")
 else:
-    match score:
-        case s if s >= 90:
-            print("Excellent")
-        case s if s >= 70:
-            print("Good")
-        case s if s >= 50:
-            print("Satisfactory")
-        case _:
-            print("Unsatisfactory")
+    print("Unsatisfactory")
 
 
 
-salary = float(input("Enter salary: "))
+salary = float(input("\nEnter salary: "))
 years = float(input("Enter years of experience: "))
 
-match years:
-    case y if y < 1:
-        print("No bonus")
-    case y if 1 <= y < 3:
-        bonus = salary * 0.05
-        print(f"Bonus: {bonus}")
-    case y if 3 <= y < 5:
-        bonus = salary * 0.10
-        print(f"Bonus: {bonus}")
-    case _:
-        bonus = salary * 0.15
-        print(f"Bonus: {bonus}")
+if years < 1:
+    print("No bonus")
+elif years < 3:
+    print(f"Bonus: {salary * 0.05}")
+elif years < 5:
+    print(f"Bonus: {salary * 0.10}")
+else:
+    print(f"Bonus: {salary * 0.15}")
 
 
 
-
-number = int(input("Enter a four-digit number: "))
+number = int(input("\nEnter a four-digit number: "))
 n = abs(number)
 
 if 1000 <= n <= 9999:
@@ -84,34 +78,38 @@ if 1000 <= n <= 9999:
     c = n // 10 % 10
     d = n % 10
 
-    digit_sum = a + b + c + d
+    s = a + b + c + d
 
-    if digit_sum % 2 == 0:
+    if s % 2 == 0:
         print("Sum of digits is even")
     else:
         print("Sum of digits is odd")
 else:
-    print("Error: not a four-digit number")
+    print("Error")
 
 
 
+number = int(input("\nEnter a six-digit number: "))
+n = abs(number)
 
-number = int(input("Enter a six-digit number: "))
-number_abs = abs(number)
+if 100000 <= n <= 999999:
+    a = n // 100000
+    b = n // 10000 % 10
+    c = n // 1000 % 10
+    d = n // 100 % 10
+    e = n // 10 % 10
+    f = n % 10
 
-if 100000 <= number_abs <= 999999:
-    digits = list(map(int, str(number_abs)))
-    match sum(digits[:3]) == sum(digits[3:]):
-        case True:
-            print("Lucky number")
-        case False:
-            print("Not a lucky number")
+    if a + b + c == d + e + f:
+        print("Lucky number")
+    else:
+        print("Not a lucky number")
 else:
-    print("Error: not a six-digit number")
+    print("Error")
 
 
 
-number = int(input("Enter a six-digit number: "))
+number = int(input("\nEnter a six-digit number: "))
 n = abs(number)
 
 if 100000 <= n <= 999999:
@@ -125,4 +123,4 @@ if 100000 <= n <= 999999:
     result = f*100000 + e*10000 + c*1000 + d*100 + b*10 + a
     print(f"Result: {result}")
 else:
-    print("Error: not a six-digit number")
+    print("Error")
