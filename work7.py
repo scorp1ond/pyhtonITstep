@@ -1,33 +1,34 @@
 import random
 
-nums = list(map(int, input("Enter integers separated by space: ").split()))
-n = int(input("Enter shift N: "))
+nums = input("nums: ").split()
+
+for i in range(len(nums)):
+    nums[i] = int(nums[i])
+
+n = int(input("shift: "))
 
 n = n % len(nums)
-shifted = nums[-n:] + nums[:-n]
 
-print("Shifted list:", shifted)
+print(nums[-n:] + nums[:-n])
 
+size = int(input("\nsize: "))
 
-size = int(input("\nEnter list size: "))
+list1 = []
+list2 = []
 
-list1 = [random.randint(1, 20) for _ in range(size)]
-list2 = [random.randint(1, 20) for _ in range(size)]
+for i in range(size):
+    list1.append(random.randint(1, 20))
+    list2.append(random.randint(1, 20))
 
-print("List 1:", list1)
-print("List 2:", list2)
+print("list1:", list1)
+print("list2:", list2)
 
-combined = list1 + list2
-print("Both lists:", combined)
+print("both:", list1 + list2)
 
-no_duplicates = list(set(list1 + list2))
-print("Without duplicates:", no_duplicates)
+print("no dup:", list(set(list1 + list2)))
 
-common = list(set(list1) & set(list2))
-print("Common elements:", common)
+print("common:", list(set(list1) & set(list2)))
 
-unique = list(set(list1) ^ set(list2))
-print("Unique elements:", unique)
+print("unique:", list(set(list1) ^ set(list2)))
 
-min_max = [min(list1), max(list1), min(list2), max(list2)]
-print("Min and max from each list:", min_max)
+print("min max:", min(list1), max(list1), min(list2), max(list2))
