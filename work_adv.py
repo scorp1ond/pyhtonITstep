@@ -1,7 +1,7 @@
 import random
 
 
-# Завдання 1
+
 def power(a, n):
     if n == 0:
         return 1
@@ -10,7 +10,7 @@ def power(a, n):
 print(power(2, 3))
 
 
-# Завдання 2
+
 def is_leap(y):
     return (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0)
 
@@ -43,7 +43,7 @@ def diff(d1, m1, y1, d2, m2, y2):
 print(diff(1, 1, 2020, 10, 1, 2020))
 
 
-# Завдання 3
+
 def min_pos(arr, i=0):
     if i > len(arr) - 10:
         return 0
